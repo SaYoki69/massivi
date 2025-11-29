@@ -9,13 +9,25 @@ package tretiy;
  *
  * @author Student 3
  */
+import java.util.Scanner;
+
 public class zadanie_1 {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Scanner sc = new Scanner(System.in);
+        System.out.println("1. Зашифровать введенную с клавиатуры строку, поменяв местами первый\n"
+                + "символ с третьим, второй с четвертым и т. д. Провести дешифровку.");
+        System.out.println("");
+        String str1 = sc.nextLine();
+        //System.out.println(str1);
+        char[] chArray = str1.toCharArray();
+        String str="";
+        for (int i = 0; i < chArray.length-2; i++) {
+            char tmp=chArray[i];
+            chArray[i]=chArray[i+2];
+            chArray[i+2]=tmp;
+            
+            System.out.print(chArray[i]);
+        }
     }
-    
 }
